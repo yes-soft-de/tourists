@@ -34,9 +34,9 @@ This is the place where we extract info from the Repository.
 
 ### Service
 
-This is the place where we extract 
+This is the place where we extract
 
-### BLOC
+### BLOC Managment
 
 State management functions to provide a mitigation for the UI.
 
@@ -52,8 +52,6 @@ This is the place where we Cache Data from the API.
 
 Mitigation Middle Ground
 
-
-
 ## Technologies Used
 
 * Sqfentity as an ORM
@@ -63,35 +61,9 @@ Mitigation Middle Ground
 * MobX as a state manager
 * easy_localization as a translation provider
 
-
-
 ## Structure
 
-├───bloc
-│   └───<Folders>
-├───consts
-├───di
-│   └───components
-├───managers
-│   └───<Folders>
-├───models
-├───network
-│   └───http_client
-├───persistence
-│   └───sharedpref
-├───repositories
-│   └───<Folders>
-├───responses
-├───services
-│   └───<Folders>
-├───ui
-│   └───screens
-│       ├───<Folders>
-│       └───<Folders>
-└───utils
-    └───logger
-
-
+<img src='./snapshots/Tree.jpg' alt="Design Tree">
 
 ### BLOC
 
