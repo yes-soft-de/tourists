@@ -12,7 +12,7 @@ Tourists App
 2. Create a Profile (name, location ...) :boy: under process.
 3. POST the profile to our server, saving the user for our usage inside our DB.
 
-<img src="./snapshots/login_flow.svg" alt="Login/Register Flow" />
+<img src="./snapshots/login_flow.svg" alt="Login\Register Flow" />
 
 as you can see we have 3 stages here:
 
