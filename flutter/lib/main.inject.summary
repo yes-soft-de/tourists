@@ -21,7 +21,7 @@
           "dependencies": [
             {
               "lookupKey": {
-                "root": "asset:provider/lib/src/provider.dart#Provider",
+                "root": "asset:tourists/lib/ui/screens/login/login.dart#LoginScreen",
                 "qualifier": null
               },
               "isProvider": false

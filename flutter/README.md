@@ -4,6 +4,22 @@ Tourists App
 
 
 
+## Under Review
+
+### Registration Process
+
+1. Register using Firebase :fire: Finished!
+2. Create a Profile (name, location ...) :boy: under process.
+3. POST the profile to our server, saving the user for our usage inside our DB.
+
+![Login Process](./snapshots/Login Flow.svg)
+
+as you can see we have 3 stages here:
+
+1. Login to Firebase
+2. Register to Firebase
+3. Create a profile
+
 ## Getting Started
 
 This application is an architecture application.

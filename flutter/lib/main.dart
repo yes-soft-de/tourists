@@ -1,15 +1,15 @@
-import 'dart:developer';
-
-import 'package:easy_localization/easy_localization.dart';
-import 'package:easy_localization_loader/easy_localization_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:inject/inject.dart';
-import 'package:provider/provider.dart';
+import 'package:tourists/routes.dart';
+import 'package:tourists/ui/screens/account_type_selector/login_type_selector.dart';
 import 'package:tourists/ui/screens/login/login.dart';
 
 import 'di/components/app.component.dart';
+import 'generated/l10n.dart';
 
+typedef Provider<T> = T Function();
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,42 +20,36 @@ void main() {
     DeviceOrientation.landscapeRight,
     DeviceOrientation.landscapeLeft,
   ]).then((_) async {
-    var appComponent = await AppComponent.create();
-
-    runApp(EasyLocalization(
-        child: appComponent.app,
-        supportedLocales: [
-          Locale('en', 'US'),
-          Locale('ar', 'DZ'),
-        ],
-        path: 'resources/langs/langs.csv',
-        assetLoader: JsonAssetLoader()));
-
+    final container = await AppComponent.create();
+    runApp(container.app);
   });
-
-
 }
 
 @provide
 class MyApp extends StatelessWidget {
 
-  final Provider<LoginScreen> loginScreen;
+  // This Screens is here because it needs to be injected!
+  final LoginScreen _loginScreen;
 
-  MyApp(this.loginScreen): super();
+  MyApp(this._loginScreen);
 
   @override
   Widget build(BuildContext context) {
-    log(context.locale.toString(), name: '${this} # locale Context');
-    log('title'.tr().toString(), name: '${this} # locale');
     return MaterialApp(
-      title: 'title'.tr(),
-      localizationsDelegates: context.localizationDelegates,
-      supportedLocales: context.supportedLocales,
-      locale: context.locale,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: loginScreen,
+      localizationsDelegates: [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: S.delegate.supportedLocales,
+      title: 'Tourists',
+      routes: {
+        Routes.loginTypeSelector: (context) => LoginTypeSelectorScreen(),
+        Routes.login: (context) => _loginScreen
+      },
+      initialRoute: Routes.loginTypeSelector,
+      home: LoginTypeSelectorScreen()
     );
   }
 }

@@ -1,17 +1,17 @@
 {
-  "asset": "asset:tourists/lib/repositories/login/login.repository.dart",
+  "asset": "asset:tourists/lib/ui/screens/register/register.dart",
   "summary": {
     "injector": [],
     "module": [],
     "injectable": [
       {
-        "name": "LoginRepository",
+        "name": "RegisterScreen",
         "constructor": {
           "name": "",
           "kind": "constructor",
           "injectedType": {
             "lookupKey": {
-              "root": "asset:tourists/lib/repositories/login/login.repository.dart#LoginRepository",
+              "root": "asset:tourists/lib/ui/screens/register/register.dart#RegisterScreen",
               "qualifier": null
             },
             "isProvider": false
@@ -21,7 +21,7 @@
           "dependencies": [
             {
               "lookupKey": {
-                "root": "asset:tourists/lib/network/http_client/http_client.dart#HttpClient",
+                "root": "asset:tourists/lib/bloc/register/register.bloc.dart#RegisterBloc",
                 "qualifier": null
               },
               "isProvider": false
